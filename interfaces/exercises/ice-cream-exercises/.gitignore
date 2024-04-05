@@ -1,7 +1,7 @@
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/CountCharacters/**/build/
+!**/src/org.launchcode.CountCharacters/**/build/
 !**/src/test/**/build/
 
 ### IntelliJ IDEA ###
@@ -13,7 +13,7 @@ build/
 *.iml
 *.ipr
 out/
-!**/src/CountCharacters/**/out/
+!**/src/org.launchcode.CountCharacters/**/out/
 !**/src/test/**/out/
 
 ### Eclipse ###
@@ -25,7 +25,7 @@ out/
 .springBeans
 .sts4-cache
 bin/
-!**/src/CountCharacters/**/bin/
+!**/src/org.launchcode.CountCharacters/**/bin/
 !**/src/test/**/bin/
 
 ### NetBeans ###

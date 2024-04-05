@@ -1,12 +1,17 @@
+package org.launchcode;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class CountCharacters {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         HashMap<Character, Integer> characterCounts = new HashMap<>();
-        Scanner input = new Scanner(System.in);
+        File stringFile = new File("C:\\Users\\grube\\IdeaProjects\\java-web-dev-projects\\control-flow-and-collections\\studio\\counting-characters\\src\\main\\java\\org\\launchcode\\string.txt");
         String sentString;
+        Scanner input = new Scanner(stringFile);
         System.out.println("Enter a sentence and I will count the characters: ");
         sentString = input.nextLine();
         input.close();
