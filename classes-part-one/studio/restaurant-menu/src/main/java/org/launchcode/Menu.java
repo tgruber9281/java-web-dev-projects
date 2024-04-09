@@ -1,0 +1,24 @@
+package org.launchcode;
+
+import java.util.ArrayList;
+import java.util.Objects;
+
+public class Menu {
+    private ArrayList<MenuItem> appetizers = new ArrayList<>();
+    private ArrayList<MenuItem> mainCourses = new ArrayList<>();
+    private ArrayList<MenuItem> desserts = new ArrayList<>();
+    private String dateUpdated;
+    
+    public Menu () {
+    }
+    
+    public void addItem (MenuItem item) {
+        if (Objects.equals(item.getCat(), "Appetizer")) {
+            appetizers.add(item);
+        } else if (Objects.equals(item.getCat(), "Main Course")) {
+            mainCourses.add(item);
+        } else if (Objects.equals(item.getCat(), "Dessert")) {
+            desserts.add(item);
+        }
+    }
+}
