@@ -1,5 +1,7 @@
 package org.launchcode;
 
+import java.util.Objects;
+
 public class Student {
 
     private static int nextStudentId = 1;
@@ -30,21 +32,58 @@ public class Student {
 
 
     //TODO: Uncomment and complete the getGradeLevel method here:
-//    public String getGradeLevel() {
-//        // Determine the grade level of the student based on numberOfCredits
-//    }
+    public static String getGradeLevel(int credits) {
+        if (credits <= 29) {
+            return "Freshman";
+        } else if (credits <= 59) {
+            return "Sophomore";
+        } else if (credits <= 89) {
+            return "Junior";
+        } else {
+            return "Senior";
+        }
+    }
 
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
-        // Update the appropriate fields: numberOfCredits, gpa
+        if (grade >= 0.0 && grade <= 4.0) {
+            double totatlQualityScore = this.gpa * this.numberOfCredits;
+            totatlQualityScore += courseCredits * grade;
+            this.numberOfCredits += courseCredits;
+            this.gpa = totatlQualityScore / this.numberOfCredits;
+        }
     }
 
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
     //  than just the class fields.
-
+    
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", studentID=" + studentId +
+                ", numberOfCredits=" + numberOfCredits +
+                ", gpa=" + gpa +
+                '}';
+    }
+    
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
     //  Student objects equal.
-
+    
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return studentId == student.studentId && Objects.equals(name, student.name);
+    }
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, studentId);
+    }
+    
     public String getName() {
         return name;
     }
