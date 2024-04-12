@@ -1,32 +1,50 @@
 package org.launchcode;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Objects;
 
 public class Menu {
-    private Date lastUpdated;
-    private ArrayList<MenuItem> items;
-
-    public Menu(Date d, ArrayList<MenuItem> i) {
-        this.lastUpdated = d;
-        this.items = i;
+    private ArrayList<ArrayList<MenuItem>> fullMenu = new ArrayList<>();
+    private ArrayList<MenuItem> appetizers = new ArrayList<>();
+    private ArrayList<MenuItem> mainCourses = new ArrayList<>();
+    private ArrayList<MenuItem> desserts = new ArrayList<>();
+    private String dateUpdated;
+    
+    public Menu () {
     }
-
-    public void setLastUpdated(Date lastUpdated) {
-        this.lastUpdated = lastUpdated;
+    
+    public void addItem (MenuItem item) {
+        if (Objects.equals(item.getCat(), "Appetizer")) {
+            appetizers.add(item);
+        } else if (Objects.equals(item.getCat(), "Main Course")) {
+            mainCourses.add(item);
+        } else if (Objects.equals(item.getCat(), "Dessert")) {
+            desserts.add(item);
+        }
     }
-
-    public void setItems(ArrayList<MenuItem> items) {
-        this.items = items;
+    public void assembleMenu(){
+        fullMenu.add(appetizers);
+        fullMenu.add(mainCourses);
+        fullMenu.add(desserts);
     }
-
-    public Date getLastUpdated() {
-        return lastUpdated;
+    
+    public void printMenu(){
+        for (ArrayList<MenuItem> section : fullMenu){
+            for (MenuItem item : section){
+                System.out.println(item);
+            }
+        }
     }
-
-    public ArrayList<MenuItem> getItems() {
-        return items;
+    public void printMenuItem(String query){
+        for (ArrayList<MenuItem> section : fullMenu){
+            for (MenuItem item : section){
+                if (item.getName().equals(query)){
+                    System.out.println(item);
+                }
+            }
+        }
+    }
+    public void printMenuSection(String section){
+           if (section )
     }
 }
-
-
