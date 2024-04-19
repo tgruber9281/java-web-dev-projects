@@ -1,11 +1,10 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class Questions {
 //Fields
-    private String question;
+    private final String question;
     private boolean isCorrect;
-    private int pointValue;
+    private final int pointValue;
     public static Scanner input = new Scanner(System.in);
 //Constructor
     public Questions(String question, int pointValue) {
@@ -23,10 +22,6 @@ public abstract class Questions {
         return pointValue;
     }
 //Getters and Setters
-    public String getQuestion() {
-        return question;
-    }
-    
     public boolean isCorrect() {
         return isCorrect;
     }

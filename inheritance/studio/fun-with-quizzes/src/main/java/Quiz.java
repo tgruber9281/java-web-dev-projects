@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Quiz {
-    private ArrayList<Questions> questions = new ArrayList<>();
+    private final ArrayList<Questions> questions = new ArrayList<>();
     private int score;
     private int total;
     
@@ -23,25 +23,5 @@ public class Quiz {
     }
     public void grade(){
         System.out.println("Score: " + score + "/" + total);
-    }
-    
-    public void setScore(int score) {
-        this.score += score;
-    }
-    
-    public ArrayList<Questions> getQuestions() {
-        return questions;
-    }
-    
-    public int getScore() {
-        return score;
-    }
-    
-    public int getTotal() {
-        return total;
-    }
-    
-    public void setTotal(int total) {
-        this.total = total;
     }
 }
