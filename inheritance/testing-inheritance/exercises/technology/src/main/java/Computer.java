@@ -27,4 +27,14 @@ public class Computer extends AbstractEntity{
     public int getCpuSpeedGHZ() {
         return cpuSpeedGHZ;
     }
+    
+    @Override
+    public String toString() {
+        return "Computer{" +
+                "brand='" + brand + '\'' +
+                ", portable=" + portable +
+                ", ram=" + ram +
+                ", cpuSpeedGHZ=" + cpuSpeedGHZ +
+                '}';
+    }
 }

@@ -27,4 +27,14 @@ public class Smartphone extends Computer{
     public boolean isHasWirelessCharging() {
         return hasWirelessCharging;
     }
+    
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "name='" + name + '\'' +
+                ", screenSize=" + screenSize +
+                ", hasHeadPhoneJack=" + hasHeadPhoneJack +
+                ", hasWirelessCharging=" + hasWirelessCharging +
+                '}';
+    }
 }

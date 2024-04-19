@@ -27,4 +27,14 @@ public class Laptop extends Computer{
     public String getName() {
         return name;
     }
+    
+    @Override
+    public String toString() {
+        return "Laptop{" +
+                "isTouchScreen=" + isTouchScreen +
+                ", screenSize=" + screenSize +
+                ", hasNumPad=" + hasNumPad +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

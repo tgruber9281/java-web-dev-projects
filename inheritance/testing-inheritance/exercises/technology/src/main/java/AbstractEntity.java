@@ -1,5 +1,5 @@
 public abstract class AbstractEntity {
-    private int nextObjectID = 0;
+    private static int nextObjectID = 0;
     private int objectID;
     
     public AbstractEntity(){
@@ -10,4 +10,5 @@ public abstract class AbstractEntity {
     public int getObjectID() {
         return objectID;
     }
+    
 }
