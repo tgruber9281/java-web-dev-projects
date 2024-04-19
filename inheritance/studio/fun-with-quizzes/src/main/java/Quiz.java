@@ -13,7 +13,7 @@ public class Quiz {
             if (question.isCorrect()) {
                 score += question.getPointValue();
             }
-            total += question.getPointValue();
+            total += question.getPossiblePointValue();
             System.out.println("\nCurrent score: " + score + "/" + total + "\n");
         }
     }

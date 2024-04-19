@@ -4,12 +4,14 @@ public abstract class Questions {
 //Fields
     private final String question;
     private boolean isCorrect;
-    private final int pointValue;
+    private int pointValue;
+    private final int possiblePointValue;
     public static Scanner input = new Scanner(System.in);
 //Constructor
     public Questions(String question, int pointValue) {
         this.question = question;
         this.pointValue = pointValue;
+        this.possiblePointValue = pointValue;
     }
     
     public void displayQuestion(){
@@ -21,7 +23,16 @@ public abstract class Questions {
     public int getPointValue() {
         return pointValue;
     }
-//Getters and Setters
+    
+    public int getPossiblePointValue() {
+        return possiblePointValue;
+    }
+    
+    public void setPointValue(int pointValue) {
+        this.pointValue += pointValue;
+    }
+    
+    //Getters and Setters
     public boolean isCorrect() {
         return isCorrect;
     }

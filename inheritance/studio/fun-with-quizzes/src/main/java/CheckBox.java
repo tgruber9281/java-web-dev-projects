@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class CheckBox extends Questions{
     //Fields
-    private ArrayList<String> possAnswers = new ArrayList<>();
-    private ArrayList<Boolean> correctAnswers = new ArrayList<>();
-    private ArrayList<Boolean> userAnswers = new ArrayList<>();
+    private final ArrayList<String> possAnswers = new ArrayList<>();
+    private final ArrayList<Boolean> correctAnswers = new ArrayList<>();
+    private final ArrayList<Boolean> userAnswers = new ArrayList<>();
     //Constructor
     
     
@@ -41,9 +41,10 @@ public class CheckBox extends Questions{
     @Override
     void validateAnswer() {
         for (int i = 0; i< correctAnswers.size(); i++) {
-            setCorrect(correctAnswers.get(i)==userAnswers.get(i));
-            if (!isCorrect()){
-                break;
+            if (correctAnswers.get(i)==userAnswers.get(i)) {
+                setCorrect(true);
+            }else {
+                setPointValue(-1);
             }
         }
         System.out.println("You answered correctly: " + isCorrect());
